@@ -54,7 +54,7 @@
   
     closedir($dir);
     $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, "<?
+    fwrite($fp, "<?\\
       $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
       ?>");
     fclose($fp);
