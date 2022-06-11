@@ -33,7 +33,7 @@
 
   </style>
 <div class="js-copy-target box">$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.max/install/wizards/aspro/max/site/templates/aspro_max';
-  $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro_max_test_tp';
+  $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro_max_test_tp1';
   function copy_dir($src, $drc)
   {
     $dir = opendir($src);
@@ -54,9 +54,9 @@
   
     closedir($dir);
     $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
+    fwrite($fp, "<?
       $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
+      ?>");
     fclose($fp);
   }
   
