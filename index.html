@@ -8,32 +8,30 @@
 </head>
 <body>
   <style>
-/* стили кнопки */
-.box {
- display: none;
-}
-.js-copy-btn {
-    cursor: pointer;
-    margin-right: 20px;
-    background-color: #045acf;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all .4s;
-    font-weight: 700;
-}
-.js-copy-btn:hover {
-    background-color: #2978e7;
-}
-
-.copied {
-  border-color: #045acf;
-}
-
+    /* стили кнопки */
+    .box {
+     display: none;
+    }
+    .js-copy-btn {
+        cursor: pointer;
+        margin-right: 20px;
+        background-color: #045acf;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: all .4s;
+        font-weight: 700;
+    }
+    .js-copy-btn:hover {
+        background-color: #2978e7;
+    }
+    .copied {
+      border-color: #045acf;
+    }
   </style>
 <div class="js-copy-target box">$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.max/install/wizards/aspro/max/site/templates/aspro_max';
-  $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro_max_test_tp1';
+  $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro_max_test_tp';
   function copy_dir($src, $drc)
   {
     $dir = opendir($src);
@@ -53,18 +51,13 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, "<?\\
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>");
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Максимум - интернет-магазин', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
-  
   copy_dir($path_copi, $path_paste);</div>
+    
 <button class="js-copy-btn">max</button>
-
 
 <div class="js-copy-target box">$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.next/install/wizards/aspro/next/site/templates';
   $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro_next_test_tp';
@@ -87,15 +80,12 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    
+    
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Next - интернет-магазин', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
-  
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">next</button>
 
@@ -120,14 +110,10 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Optimus - Адаптивный интернет-магазин', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">optimus</button>
@@ -153,14 +139,10 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Корпоративный сайт 3.0', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">allcorp3</button>
@@ -186,14 +168,10 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Медицинский центр 3.0', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">allcorp3medc</button>
@@ -219,14 +197,10 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Шаблон Аспро: Allcorp2-компания', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">allcorp2</button>
@@ -252,14 +226,10 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Шаблон Аспро: Priority-компания', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">priority</button>
@@ -285,29 +255,13 @@
     }
   
     closedir($dir);
-    $fp = fopen($drc .'/lang/ru/description.php', 'w');
-    fwrite($fp, '<?
-      $MESS["TEMPLATE_NAME"] = "Тестовый шаблон Аспро";
-      ?>');
-    fclose($fp);
+    $data = file_get_contents($drc .'/lang/ru/description.php');
+    $new_content = str_replace('Аспро: Шины и диски 2.0', 'Тестовый шаблон Аспро', $data);
+    file_put_contents($drc .'/lang/ru/description.php', $new_content);
   }
-  
-  
   
   copy_dir($path_copi, $path_paste);</div>
 <button class="js-copy-btn">tires2</button><br/><br/>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
 setAutoCopyFeatures()
