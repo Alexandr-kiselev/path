@@ -62,7 +62,7 @@
     function addText(btnName,descrip){
         if(btnName == 'tires2' || btnName == 'optimus' || btnName == 'next' || btnName == 'max'){
             templates = `$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.${btnName}/install/wizards/aspro/${btnName}/site/templates/aspro_${btnName} ';
-            $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-date('Y-m-d')';
+            $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-' date('Y-m-d');
             function copy_dir($src, $drc)
             {
                 $dir = opendir($src);
@@ -88,7 +88,7 @@
             }`
         }else{
             templates = `$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.${btnName}/install/wizards/aspro/${btnName}/site/templates/aspro-${btnName}';
-            $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-date('Y-m-d')';
+            $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-' . date('Y-m-d');
             function copy_dir($src, $drc)
             {
                 $dir = opendir($src);
