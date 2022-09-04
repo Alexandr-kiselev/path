@@ -10,9 +10,9 @@
   <style>
     /* стили кнопки */
     .box {
-     display: none;
+     margin-top: 20px;
     }
-    .js-copy-btn {
+    .js-copy-btn,  #addTextFamaly{
         cursor: pointer;
         margin-right: 20px;
         background-color: #045acf;
@@ -29,37 +29,49 @@
     .copied {
       border-color: #045acf;
     }
+    input[type="text" i] {
+    padding: 7px;
+}
   </style>
-  <label for="inputText">Ваша фамилия на латинице</label>
-  <input id="inputText" type="text">
-  <button id="addTextFamaly">Добавить</button>
+  <div>
+    <label for="inputText">Ваша фамилия на латинице</label>
+    <input id="inputText" type="text" value="">
+    <button id="addTextFamaly" onclick="opneBlok()">Добавить</button>
+  </div>
 
-    
-<button class="js-copy-btn" name="Аспро: Максимум - интернет-магазин">max</button>
 
-<button class="js-copy-btn" name="Аспро: Next - интернет-магазин">next</button>
+    <div class="box">
+        <button class="js-copy-btn" name="Аспро: Максимум - интернет-магазин">max</button>
+        <button class="js-copy-btn" name="Аспро: ЛайтШоп - интернет-магазин">lite</button>
+        <button class="js-copy-btn" name="Аспро: Next - интернет-магазин">next</button>  
+        <button class="js-copy-btn" name="Аспро: Optimus - Адаптивный интернет-магазин">optimus</button>       
+        <button class="js-copy-btn" name="Аспро: Корпоративный сайт 3.0">allcorp3</button>        
+        <button class="js-copy-btn" name="Аспро: Медицинский центр 3.0">allcorp3medc</button>        
+        <button class="js-copy-btn" name="Шаблон Аспро: Allcorp2-компания">allcorp2</button>        
+        <button class="js-copy-btn" name="Шаблон Аспро: Priority-компания">priority</button>        
+        <button class="js-copy-btn" name="Аспро: Шины и диски 2.0">tires2</button>
+    </div>
 
-<button class="js-copy-btn" name="Аспро: Optimus - Адаптивный интернет-магазин">optimus</button>
-
-<button class="js-copy-btn" name="Аспро: Корпоративный сайт 3.0">allcorp3</button>
-
-<button class="js-copy-btn" name="Аспро: Медицинский центр 3.0">allcorp3medc</button>
-
-<button class="js-copy-btn" name="Шаблон Аспро: Allcorp2-компания">allcorp2</button>
-
-<button class="js-copy-btn" name="Шаблон Аспро: Priority-компания">priority</button>
-
-<button class="js-copy-btn" name="Аспро: Шины и диски 2.0">tires2</button><br/><br/>
 
 <script>
     var inputText = document.querySelector('#inputText')
     var inputTextBtn = document.querySelector('.js-copy-target')
     var addTextFamaly = document.querySelector('#addTextFamaly')
-    var textInput = inputText.value
+    var box = document.querySelector('.box')
     var templates
-    var templates2
+    
+        if(inputText.value == ''){
+            box.style.display="none"
+        }
+        function opneBlok(){ 
+            box.style.display="block"
+        }
+        
+   
+
     addTextFamaly.addEventListener('click', addText())
     function addText(btnName,descrip){
+
         if(btnName == 'tires2' || btnName == 'optimus' || btnName == 'next' || btnName == 'max'){
             templates = `$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.${btnName}/install/wizards/aspro/${btnName}/site/templates/aspro_${btnName} ';
             $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-' . date('d-m-Y');
@@ -116,7 +128,7 @@ copy_dir($path_copi, $path_paste);`
             copy_dir($path_copi, $path_paste);`
         }
          
-
+             
            
                 }
 
