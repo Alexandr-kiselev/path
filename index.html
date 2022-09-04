@@ -73,7 +73,7 @@
     function addText(btnName,descrip){
 
         if(btnName == 'tires2' || btnName == 'optimus' || btnName == 'next' || btnName == 'max'){
-            templates = `$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.${btnName}/install/wizards/aspro/${btnName}/site/templates/aspro_${btnName} ';
+            templates = `$path_copi = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/aspro.${btnName}/install/wizards/aspro/${btnName}/site/templates/aspro_${btnName}';
             $path_paste = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/aspro.${btnName}-${inputText.value}-' . date('d-m-Y');
             function copy_dir($src, $drc)
             {
